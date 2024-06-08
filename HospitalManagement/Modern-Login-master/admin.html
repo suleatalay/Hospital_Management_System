@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-md p-5 ">
+
+        <table class="table table-bordered border-warning caption-top">
+            <caption>
+                <h1>Doktorlar</h1>
+            </caption>
+            <thead class="table-success">
+                <tr>
+                    <th scope="col">DOKTOR ID</th>
+                    <th scope="col">DOKTOR ADI</th>
+                    <th scope="col">DOKTOR SOYADI</th>
+                    <th scope="col">DOKTOR UZMANLIK ALANI</th>
+                    <th scope="col">ÇALIŞTIGI HASTANE </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">#</th>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+        <button id="gosterBtn" type="button" class="btn btn-success my-3" style="width:108px;">GÖSTER</button><br>
+
+    </div>
+
+
+    <div class="container-md p-5 my-5">
+
+        <table class="table table-bordered border-warning caption-top">
+            <caption>
+                <h1>HASTALAR</h1>
+            </caption>
+            <thead class="table-success">
+                <tr>
+                    <th scope="col">HASTA ID</th>
+                    <th scope="col">HASTANIN ADI</th>
+                    <th scope="col">HASTANIN SOYADI</th>
+                    <th scope="col">HASTANIN DOĞUM TARİHİ</th>
+                    <th scope="col">HASTANIN CİNSİYETİ </th>
+                    <th scope="col">HASTANIN TELEFON NUMARASI</th>
+                    <th scope="col">HASTANIN ADRESİ</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">#</th>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>#</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <button id="gosterBtnDoktor" type="button" class="btn btn-success my-3" style="width:108px;">GÖSTER</button><br>
+
+
+
+
+    </div>
+
+    <div class="container text-center my-5 py-5">
+        <div class="row">
+            <div class="col">
+
+                <div class="container-md" style="width:400px;">
+
+                    <h1>Silmek istediğiniz hastanın HastaID sini girin:</h1>
+                    <form action="/sil" method="post">
+                        <label for="fname">Silinecek ID:</label>
+                        <input type="text" id="idname" name="idname" required><br><br>
+
+
+                        <button type="submit" id="silBtn" value="sil"> Sil </button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md" style="width:400px;">
+
+                    <h1>Eklemek istediğiniz Hastanın Bilgilerini girin</h1>
+                    <form action="/ekle" method="post">
+                        <br>
+
+                        <label for="fname">Hasta Adı:</label>
+                        <input type="text" id="idname" name="idname" required><br>
+                        <br>
+                        <label for="lname">Hasta Soyadı:</label>
+                        <input type="text" id="idlname" name="idlname" required><br>
+                        <br>
+                        <label for="date">Dogum Tarihi:</label>
+                        <input type="date" id="iddate" name="iddate" required><br>
+                        <br>
+                        <label for="gender">Cinsiyet:</label>
+                        <input type="text" id="idgender" name="idgender" required><br>
+                        <br>
+                        <label for="tel">Telefon:</label>
+                        <input type="text" id="idtel" name="idtel" required><br>
+                        <br>
+                        <label for="adress">Adres:</label>
+                        <input type="text" id="idadress" name="idadress" required><br>
+                        <br>
+
+                        <button type="submit" id="ekleBtn" value="ekle"> Ekle </button>
+                        <br>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="container-md" style="width:400px;">
+
+                    <h1>Silmek istediğiniz doktorun DoktorID sini girin:</h1>
+                    <form action="/silDoktor" method="post">
+                        <label for="fname">Silinecek ID:</label>
+                        <input type="text" id="iddname" name="iddname" required><br>
+
+                        <br>
+                        <button type="submit" id="silDBtn" value="sil"> Sil </button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md" style="width:400px;">
+
+                    <h1>Eklemek istediğiniz Doktorun Bilgilerini girin</h1>
+                    <form action="/ekleDoktor" method="post">
+
+                        <label for="dfname">Doktor Adı:</label>
+                        <input type="text" id="iddname" name="iddname" required><br>
+                        <br>
+                        <label for="dlname">Doktor Soyadı:</label>
+                        <input type="text" id="iddlname" name="iddlname" required><br>
+                        <br>
+                        <label for="duzman">Doktor Uzmanlık:</label>
+                        <input type="text" id="iduzman" name="iduzman" required><br>
+                        <br>
+                        <label for="dhastane">Çalıştığı Hastane:</label>
+                        <input type="text" id="idhastane" name="idhastane" required><br>
+
+                        <br>
+
+                        <label for="dhastane">Şifresi:</label>
+                        <input type="text" id="idsifre" name="idsifre" required>
+                        <br>
+
+                        <button type="submit" id="ekleDBtn" value="ekle"> Ekle </button>
+                        <br>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script>
+        document.getElementById('gosterBtn').addEventListener('click', () => {
+            fetch('/gosterAdmin')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('.table tbody');
+                    // Tabloyu temizle
+                    tableBody.innerHTML = '';
+
+                    // Verileri tabloya ekle
+                    data.forEach((info, index) => {
+                        const newRow = tableBody.insertRow(); // Yeni satır oluştur
+                        const cells = Object.values(info); // Info objesinin değerlerini al
+
+                        // Her hücreyi doldur
+                        cells.forEach((cellData, cellIndex) => {
+                            const newCell = newRow.insertCell(cellIndex); // Yeni hücre oluştur
+                            newCell.textContent = cellData; // Hücreye veriyi ekle
+                        });
+                    });
+                })
+                .catch(error => console.error('Hata:', error));
+        });
+
+        document.getElementById('gosterBtnDoktor').addEventListener('click', () => {
+            fetch('/goster')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelectorAll('.table tbody')[1]; // İkinci tabloya veri eklemek için seçiciyi güncelle
+                    // Tabloyu temizle
+                    tableBody.innerHTML = '';
+
+                    // Verileri tabloya ekle
+                    data.forEach((info, index) => {
+                        const newRow = tableBody.insertRow(); // Yeni satır oluştur
+                        const cells = Object.values(info); // Info objesinin değerlerini al
+
+                        // Her hücreyi doldur
+                        cells.forEach((cellData, cellIndex) => {
+                            const newCell = newRow.insertCell(cellIndex); // Yeni hücre oluştur
+                            newCell.textContent = cellData; // Hücreye veriyi ekle
+                        });
+                    });
+                })
+                .catch(error => console.error('Hata:', error));
+        });
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
